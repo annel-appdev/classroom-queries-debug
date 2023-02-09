@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   # READ
   get("/courses", { :controller => "courses", :action => "index" })
-  
+
   get("/courses/:path_id", { :controller => "courses", :action => "show" })
 
   #------------------------------

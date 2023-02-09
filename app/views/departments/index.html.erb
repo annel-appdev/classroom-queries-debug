@@ -11,6 +11,7 @@
   <div class="col-md-12">
     <table class="table" border="1">
       <tr>
+
         <th>
           ID
         </th>
@@ -19,17 +20,18 @@
           Name
         </th>
 
+
         <th>
         </th>
-      </tr>
 
-      <% @list_of_department.each do |department| %>
-      <tr>
+        </tr>
+        <% @list_of_departments.each do |department| %>
+        
         <td>
           <%= department.id %>
         </td>
 
-        <td>
+         <td>
           <%= department.name %>
         </td>
 
@@ -38,6 +40,7 @@
             Show details
           </a>
         </td>
+
       </tr>
       <% end %>
     </table>
