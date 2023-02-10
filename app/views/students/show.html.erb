@@ -13,33 +13,34 @@
     </div>
 
     <dl>
-    <%= @the_student.each do |student| %>
+    
       <dt>
         First name
       </dt>
       <dd>
-        <%= student.first_name %>
+        <%= @matching_students.first_name %>
       </dd>
 
       <dt>
         Last name
       </dt>
       <dd>
-        <%= student.last_name %>
+  def show
+        <%= @matching_students.last_name %>
       </dd>
 
       <dt>
         Email
       </dt>
       <dd>
-        <%= student.email %>
+        <%= @matching_students.email %>
       </dd>
 
       <dt>
         Number of courses
       </dt>
       <dd>
-        <%= Enrollment.where({ :student_id => student.id }).count %>
+        <%= Enrollment.where({ :student_id => @matching_students.id }).count %>
       </dd>
     </dl>
   </div>
@@ -49,7 +50,7 @@
 
 <h3>Course Load</h3>
 <ul>
-  <% enrollments = Enrollment.where({:student_id => student.id }) %>
+  <% enrollments = Enrollment.where({:student_id => @matching_students.id }) %>
   <% enrollments.each do |enrollment| %>
     <li>
       <% course = Course.where({ :id => enrollment.course_id }).at(0) %>
@@ -57,6 +58,5 @@
         <%= course.title %>
       </a>
     </li>
-  <% end %>
   <% end %>
 </ul>
